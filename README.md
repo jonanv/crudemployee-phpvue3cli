@@ -30,3 +30,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```javascript
 vue create crudusers-phpvue3cli
 ```
+
+# Create router
+```javascript
+vue add router
+```
+
+node --version v14.16.0
+npm --version 7.16.0
+vue@next v3.1.1
+@vue/cli 4.5.13
