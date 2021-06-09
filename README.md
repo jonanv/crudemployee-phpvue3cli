@@ -1,4 +1,4 @@
-# crudusers-phpvue3cli
+# crudemployee-phpvue3cli
 
 ## Project setup
 ```
@@ -28,7 +28,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Create project
 ```javascript
-vue create crudusers-phpvue3cli
+vue create crudemployee-phpvue3cli
 ```
 
 # Create router
