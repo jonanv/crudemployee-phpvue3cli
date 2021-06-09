@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+--
+--
+
+# Create project
+```javascript
+vue create crudusers-phpvue3cli
+```
