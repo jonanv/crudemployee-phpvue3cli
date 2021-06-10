@@ -1,8 +1,12 @@
 <template>
-  <div id="nav">
-    <router-link to="/create">Create</router-link> |
-    <router-link to="/list">List</router-link>
-  </div>
+
+  <nav id="nav" class="navbar navbar-expand navbar-dark bg-dark mb-4">
+    <div class="nav navbar-nav">
+      <router-link to="/create" class="nav-link">Create</router-link>
+      <router-link to="/list" class="nav-link">List</router-link>
+    </div>
+  </nav>
+
   <router-view/>
 </template>
 
@@ -11,15 +15,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
   color: #2c3e50;
 }
 

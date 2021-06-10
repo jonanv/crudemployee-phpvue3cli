@@ -2,6 +2,8 @@
 
     <div class="container">
 
+        <router-link to="/create" class="btn btn-success mb-4">Create Employee</router-link>
+
         <div class="card">
             <div class="card-header">
                 Employees
