@@ -26,10 +26,10 @@
                             <td>{{ employee.email }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" 
+                                    <router-link :to="{name: 'Edit', params: {id: employee.id_employee}}"
                                         class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i> Edit
-                                    </button>
+                                    </router-link>
                                     <button type="button" 
                                         class="btn btn-danger"
                                         v-on:click="deleteEmployee(employee.id_employee)">

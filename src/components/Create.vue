@@ -8,7 +8,7 @@
             <div class="card-body">
 
                 <form autocomplete="off"
-                    v-on:submit.prevent="addEmployee">
+                    v-on:submit.prevent="createEmployee">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" 
@@ -67,7 +67,7 @@ export default {
         }
     },
     methods: {
-        addEmployee() {
+        createEmployee() {
             // console.log(this.employee);
             let data = {
                 name: this.employee.name,
