@@ -1,7 +1,6 @@
 <template>
   <div id="nav">
     <router-link to="/create">Create</router-link> |
-    <router-link to="/edit">Edit</router-link> |
     <router-link to="/list">List</router-link>
   </div>
   <router-view/>

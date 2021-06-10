@@ -43,7 +43,8 @@
                         role="group"
                         aria-label="">
                         <button type="submit" 
-                            class="btn btn-success">
+                            class="btn btn-success"
+                            v-on:click="updateEmployee()">
                             Modificar
                         </button>
                         <router-link :to="{name: 'List'}" 
@@ -81,7 +82,24 @@ export default {
                 .catch(console.log);
         },
         updateEmployee() {
+            let data = {
+                id_employee: this.$route.params.id,
+                name: this.employee.name,
+                email: this.employee.email
+            }
 
+            let url = 'http://localhost:8888/employees/?update=' + this.$route.params.id;
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(dataResponse => {
+                    console.log(dataResponse);
+                    window.location.href = '../list';
+                    
+                })
+                .catch(console.log);
         }
     }
 }
