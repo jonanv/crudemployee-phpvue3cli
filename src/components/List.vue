@@ -6,7 +6,7 @@
             <div class="card-header">
                 Employees
             </div>
-                <div class="card-body">
+            <div class="card-body">
 
                 <table class="table table-striped table-dark">
                     <thead>
@@ -26,8 +26,12 @@
                             <td>{{ employee.email }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-primary">Edit</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="fas fa-pencil-alt"></i> Edit
+                                    </button>
+                                    <button type="button" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </button>
                                 </div>
                             </td>
                         </tr>
