@@ -7,8 +7,7 @@
             </div>
             <div class="card-body">
 
-                <form action="" 
-                    autocomplete="off"
+                <form autocomplete="off"
                     v-on:submit.prevent="addEmployee">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -18,10 +17,11 @@
                             id="name"
                             aria-describedby="helpId"
                             placeholder="Name"
+                            required
                             v-model="employee.name">
                         <small id="helpId" 
                             class="form-text text-muted">
-                            Escribe el nombre del empleado
+                            Write employee's name
                         </small>
                     </div>
                     <div class="form-group">
@@ -32,10 +32,11 @@
                             id="email"
                             aria-describedby="helpId"
                             placeholder="Email"
+                            required
                             v-model="employee.email">
                         <small id="helpId" 
                             class="form-text text-muted">
-                            Escribe el nombre del empleado
+                            Write employee's email
                         </small>
                     </div>
                     <div class="btn-group"
@@ -45,10 +46,10 @@
                             class="btn btn-success">
                             Add
                         </button>
-                        <button type="button" 
+                        <router-link :to="{name: 'List'}" 
                             class="btn btn-danger">
                             Cancel
-                        </button>
+                        </router-link>
                     </div>
                 </form>
 
@@ -67,7 +68,24 @@ export default {
     },
     methods: {
         addEmployee() {
-            console.log(this.employee);
+            // console.log(this.employee);
+            let data = {
+                name: this.employee.name,
+                email: this.employee.email
+            }
+
+            let url = 'http://localhost:8888/employees/?create=1';
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(dataResponse => {
+                    console.log(dataResponse);
+                    window.location.href = 'list';
+                    
+                })
+                .catch(console.log);
         }
     }
 }

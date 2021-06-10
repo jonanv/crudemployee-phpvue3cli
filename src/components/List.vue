@@ -19,17 +19,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(employee) in employees" :key="employee.id_employee">
-                            <th scope="row">1</th>
+                        <tr v-for="(employee, index) in employees" :key="index">
+                            <th scope="row">{{ index + 1 }}</th>
                             <td>{{ employee.id_employee }}</td>
                             <td>{{ employee.name }}</td>
                             <td>{{ employee.email }}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-primary">
+                                    <button type="button" 
+                                        class="btn btn-info">
                                         <i class="fas fa-pencil-alt"></i> Edit
                                     </button>
-                                    <button type="button" class="btn btn-danger">
+                                    <button type="button" 
+                                        class="btn btn-danger"
+                                        v-on:click="deleteEmployee(employee.id_employee)">
                                         <i class="fas fa-trash-alt"></i> Delete
                                     </button>
                                 </div>
@@ -66,6 +69,16 @@ export default {
                     if (typeof dataResponse[0].success === 'undefined') {
                         this.employees = dataResponse;
                     }
+                })
+                .catch(console.log);
+        },
+        deleteEmployee(id_employee) {
+            let url = 'http://localhost:8888/employees/?delete=' + id_employee;
+            fetch(url)
+                .then(response => response.json())
+                .then(dataResponse => {
+                    console.log(dataResponse);
+                    window.location.href = 'list';
                 })
                 .catch(console.log);
         }
