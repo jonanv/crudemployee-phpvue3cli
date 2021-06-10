@@ -36,7 +36,7 @@ vue create crudemployee-phpvue3cli
 vue add router
 ```
 
-node --version v14.16.0
-npm --version 7.16.0
-vue@next v3.1.1
-@vue/cli 4.5.13
+- node --version v14.16.0
+- npm --version 7.16.0
+- vue@next v3.1.1
+- @vue/cli 4.5.13
