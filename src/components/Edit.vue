@@ -74,8 +74,8 @@ export default {
         getEmployeeForId() {
             let url = 'http://localhost:8888/employees/?get=' + this.$route.params.id;
             fetch(url)
-                .then(response => response.json())
-                .then(dataResponse => {
+                .then((response) => response.json())
+                .then((dataResponse) => {
                     console.log(dataResponse);
                     this.employee = dataResponse[0];
                 })
@@ -93,8 +93,8 @@ export default {
                 method: 'POST',
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
-                .then(dataResponse => {
+                .then((response) => response.json())
+                .then((dataResponse) => {
                     console.log(dataResponse);
                     window.location.href = '../list';
                     

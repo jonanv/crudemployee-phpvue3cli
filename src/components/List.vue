@@ -64,8 +64,8 @@ export default {
         getEmployees() {
             let url = 'http://localhost:8888/employees/';
             fetch(url)
-                .then(response => response.json())
-                .then(dataResponse => {
+                .then((response) => response.json())
+                .then((dataResponse) => {
                     console.log(dataResponse);
                     this.employees = [];
                     if (typeof dataResponse[0].success === 'undefined') {
@@ -77,8 +77,8 @@ export default {
         deleteEmployee(id_employee) {
             let url = 'http://localhost:8888/employees/?delete=' + id_employee;
             fetch(url)
-                .then(response => response.json())
-                .then(dataResponse => {
+                .then((response) => response.json())
+                .then((dataResponse) => {
                     console.log(dataResponse);
                     window.location.href = 'list';
                 })

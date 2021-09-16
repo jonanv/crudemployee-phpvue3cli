@@ -79,8 +79,8 @@ export default {
                 method: 'POST',
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
-                .then(dataResponse => {
+                .then((response) => response.json())
+                .then((dataResponse) => {
                     console.log(dataResponse);
                     window.location.href = 'list';
                     
